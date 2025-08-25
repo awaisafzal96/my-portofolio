@@ -1,0 +1,170 @@
+/* styles.css */
+/* CSS for unique design: Modern dark theme with gradient background, card effects, and simple animations */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+
+.links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #ffd700;
+}
+
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.skill-item:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.skill-item i {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    margin: 0;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .links a {
+        font-size: 1em;
+        margin: 0 5px;
+    }
+
+    section {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .skill-item i {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 5px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .links a {
+        margin: 5px 0;
+    }
+
+    section {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
