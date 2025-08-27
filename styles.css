@@ -1,5 +1,5 @@
 /* styles.css */
-/* CSS for unique design: Modern dark theme with gradient background, card effects, and simple animations */
+/* Modern dark theme with gradient background, card effects, and animations */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -23,6 +23,30 @@ header {
 
 body.light header {
     background: rgba(255, 255, 255, 0.5);
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+body.light nav a {
+    color: #000;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+body.light nav a:hover {
+    color: #1e3c72;
 }
 
 .profile-pic {
@@ -58,6 +82,11 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
 .links a {
     color: #fff;
     margin: 0 10px;
@@ -78,6 +107,11 @@ body.light .links a:hover {
     color: #1e3c72;
 }
 
+.availability {
+    font-style: italic;
+    margin: 10px 0;
+}
+
 section {
     max-width: 800px;
     margin: 40px auto;
@@ -92,16 +126,27 @@ body.light section {
     background: rgba(0, 0, 0, 0.1);
 }
 
+.skills-category {
+    margin-bottom: 20px;
+}
+
 .skills-grid,
-.projects-grid {
+.projects-grid,
+.cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     text-align: center;
 }
 
+.cert-grid {
+    justify-items: center; /* Center the single certificate */
+}
+
 .skill-item,
-.project-item {
+.project-item,
+.testimonial-item,
+.cert-item {
     background: rgba(0, 0, 0, 0.3);
     padding: 15px;
     border-radius: 8px;
@@ -109,17 +154,23 @@ body.light section {
 }
 
 body.light .skill-item,
-body.light .project-item {
+body.light .project-item,
+body.light .testimonial-item,
+body.light .cert-item {
     background: rgba(255, 255, 255, 0.3);
 }
 
 .skill-item:hover,
-.project-item:hover {
+.project-item:hover,
+.testimonial-item:hover,
+.cert-item:hover {
     background: rgba(0, 0, 0, 0.5);
 }
 
 body.light .skill-item:hover,
-body.light .project-item:hover {
+body.light .project-item:hover,
+body.light .testimonial-item:hover,
+body.light .cert-item:hover {
     background: rgba(255, 255, 255, 0.5);
 }
 
@@ -133,33 +184,91 @@ body.light .project-item:hover {
     font-weight: bold;
 }
 
-.project-item h4 {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-.project-item p {
+.project-img,
+.cert-img {
+    max-width: 100%;
+    border-radius: 8px;
     margin: 10px 0;
 }
 
-.project-link {
+.project-link,
+.cv-link {
     display: inline-block;
-    margin-top: 10px;
+    margin: 5px 10px;
     color: #ffd700;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-body.light .project-link {
+body.light .project-link,
+body.light .cv-link {
     color: #1e3c72;
 }
 
-.project-link:hover {
+.project-link:hover,
+.cv-link:hover {
     color: #fff;
 }
 
-body.light .project-link:hover {
+body.light .project-link:hover,
+body.light .cv-link:hover {
     color: #000;
+}
+
+#certifications ul,
+#education p,
+#blog ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+body.light #contact input,
+body.light #contact textarea {
+    background: rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#contact button {
+    padding: 10px;
+    background: #ffd700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #fff;
+}
+
+body.light #contact button {
+    background: #1e3c72;
+    color: #fff;
+}
+
+body.light #contact button:hover {
+    background: #000;
 }
 
 footer {
@@ -176,6 +285,16 @@ body.light footer {
 @media (max-width: 768px) {
     header {
         padding: 30px 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px 10px;
     }
 
     h1 {
@@ -206,7 +325,8 @@ body.light footer {
     }
 
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .cert-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 15px;
     }
@@ -219,6 +339,10 @@ body.light footer {
 @media (max-width: 480px) {
     header {
         padding: 20px 5px;
+    }
+
+    nav {
+        flex-direction: column;
     }
 
     h1 {
@@ -253,7 +377,8 @@ body.light footer {
     }
 
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .cert-grid {
         grid-template-columns: 1fr;
     }
 }
